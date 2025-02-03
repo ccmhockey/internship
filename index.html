@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCM Hockey Clone</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1a1a1a;
+            padding: 15px 30px;
+        }
+        .logo {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .internship-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .internship-button:hover {
+            background-color: darkred;
+        }
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            background-image: url('https://www.ccmhockey.com/themes/custom/ccmhockey/logo.svg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">CCM Hockey</div>
+        <div class="nav-links">
+            <a href="#">Products</a>
+            <a href="#">Customization</a>
+            <a href="#">Team</a>
+            <a href="#">Stores</a>
+            <button class="internship-button" onclick="redirectToValentine()">Internships</button>
+        </div>
+    </div>
+    <div class="hero">WELCOME TO CCM HOCKEY</div>
+
+    <script>
+        function redirectToValentine() {
+            window.location.href = "valentine.html"; // Replace with actual Valentine page URL
+        }
+    </script>
+</body>
+</html>

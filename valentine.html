@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .question, .buttons {
+            z-index: 2;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .decline {
+            background-color: red;
+            color: white;
+        }
+        .double-decline {
+            background-color: green;
+            color: white;
+        }
+        .heart, .smiley {
+            position: absolute;
+            font-size: 40px;
+            opacity: 0.8;
+            animation: float 5s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.2); }
+            100% { transform: translateY(0) scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="question">Will you be a supa slu and be my Valentine?</div>
+    <div class="buttons">
+        <button class="decline">Decline</button>
+        <button class="double-decline" onclick="showLoveMessage()">Double Decline</button>
+    </div>
+    
+    <script>
+        function showLoveMessage() {
+            document.body.innerHTML = "";
+            let message = document.createElement("div");
+            message.innerText = "i sluv u more than anyting! eat me out later?";
+            message.style.fontSize = "24px";
+            message.style.fontWeight = "bold";
+            message.style.textAlign = "center";
+            message.style.position = "absolute";
+            message.style.top = "20%";
+            message.style.left = "50%";
+            message.style.transform = "translateX(-50%)";
+            document.body.appendChild(message);
+            
+            for (let i = 0; i < 30; i++) {
+                let symbol = Math.random() > 0.5 ? "❤️" : "😊";
+                let floatingElement = document.createElement("div");
+                floatingElement.classList.add(symbol === "❤️" ? "heart" : "smiley");
+                floatingElement.innerText = symbol;
+                floatingElement.style.left = Math.random() * 100 + "vw";
+                floatingElement.style.top = Math.random() * 100 + "vh";
+                floatingElement.style.animationDuration = Math.random() * 5 + 3 + "s";
+                document.body.appendChild(floatingElement);
+            }
+        }
+    </script>
+</body>
+</html>
